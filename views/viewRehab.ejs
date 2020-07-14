@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+
+<title>CastVote</title>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/aboutUs.css">
+<link rel="stylesheet" href="css/home.css">
+
+<!--userprofile.ejs-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.11.7"></script>
+<!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link rel="stylesheet" href="css/treatment.css">-->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<!------ Include the above in your HEAD tag ---------->
+<body>
+    
+    <!-- Navbar (sit on top) -->
+
+<div class="w3-top">
+
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <!--<a href="/" class="w3-bar-item w3-button w3-wide"><span class="glyphicon glyphicon-eye-open"></span><strong> RetinoDoc</strong></a>-->
+<a href="/" class="w3-bar-item w3-button w3-wide" style="color:#24574a;"><strong>CastVote</strong></a>
+    <div class="w3-right w3-hide-small">
+        
+            <div class="w3-dropdown-hover">
+                <a href="#" class="w3-button w3-white" style="color:#24574a;"><span class="glyphicon glyphicon-th" style="color:#24574a;"></span> Menu</a>
+                <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                  
+    
+                    
+                    <% if (!currentUser) { %>   
+                    <a href="/login" class="w3-bar-item w3-button" style="color:#24574a;">Login for profile</a>
+            
+                     <% } else { %>
+                    <a href="/home/<%= currentUser.id %>" class="w3-bar-item w3-button" style="color:#24574a;">View Profile of <%= currentUser.username %> </a>
+             
+                    <% } %>
+                   
+                </div>
+            </div>
+            <% if (!currentUser) { %>   
+                <a href="/login" class="w3-bar-item w3-button" ><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            
+                <a href="/signIn" class="w3-bar-item w3-button" ><i class="fa fa-user-plus" style="font-size:20px"></i> Register</a>
+            <% } else { %>
+                <a href="#" class="w3-bar-item w3-button" "><i style='font-size:24px' class='fas'>&#xf2bd;</i> Logged In As <%= currentUser.username %> </a>
+                <a href="/logout" class="w3-bar-item w3-button" ><span class="glyphicon glyphicon-off"></span> Logout </a>
+            <% } %>
+    </div>
+
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+
+      <i class="fa fa-bars"></i>
+
+    </a>
+
+  </div>
+
+</div>
+
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none; opacity:0.8" id="mySidebar">
+
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+
+            <div class="w3-dropdown-hover">
+                <a class="w3-button" style="color:#24574a;"><span class="glyphicon glyphicon-th" style="color:#24574a;"></span> Menu</a>
+               <div class="w3-dropdown-content w3-bar-block w3-black w3-card-4">
+              
+
+                     <% if (!currentUser) { %>   
+                    <a href="/login" class="w3-bar-item w3-button" style="color:#24574a;">Login for profile</a>
+            
+                     <% } else { %>
+                    <a href="/home/<%= currentUser.id %>" class="w3-bar-item w3-button" style="color:#24574a;">View Profile of <%= currentUser.username %> </a>
+             
+                    <% } %>
+                </div>
+            </div>  
+     <% if (!currentUser) { %>   
+                <a href="/login" class="w3-bar-item w3-button"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+            
+                <a href="/signIn" class="w3-bar-item w3-button"><i class="fa fa-user-plus" style="font-size:20px"></i> Register</a>
+            <% } else { %>
+                <a href="#" class="w3-bar-item w3-button><i style='font-size:24px' class='fas'>&#xf2bd;</i> Logged In As <%= currentUser.username %> </a>
+                <a href="/logout" class="w3-bar-item w3-button"><span class="glyphicon glyphicon-off"></span> Logout </a>
+            <% } %>
+</nav>
+
+<script>
+    var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+    } else {
+        mySidebar.style.display = 'block';
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+}
+</script>
+
+ <div class="container" style="";>
+     <!--<header class="jumbotron">-->
+         <div class="container">
+             <br>
+             <br>
+             <br>
+             
+             <h1 style="padding:30px";>Our Registered Users</h1>
+         </div>
+     <!--</header>-->
+
+     <!--Search Button-->
+     
+     <p>
+         <form action="/viewRehab" method="GET" class="form-inline">
+             <div class="form-group" style="margin-left:1050px;">
+                 <input type="text" name="search" placeholder="Enter Location" class="form-control">
+                 <input type="submit" value="search" class="btn btn-primary">
+             </div>
+         </form>
+     </p>
+     
+     
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+         <div class="col-md-12">
+             <% if(noMatch != undefined) { %>
+                 <h3 style="margin-left:500px;"><%= noMatch %></h3>
+             <% } %>
+         </div> 
+        <% rehab.forEach(function(rehab){ %>
+            <div class="col-md-3 col-sm-6" id="width" style="margin:30px" >
+                <div class="thumbnail" align="center" style="outline-style:solid;left-margin:30px">
+                  <div class="caption">
+                   
+                   <div class="container" style="margin:30px;;padding-top:30px">
+                   <!--<img src=""  style="border-style:solid" width="200" height="200">-->
+                   </div>
+                   <p>
+                       <h4>Name:<%= rehab.name %></h4>
+                       <h5>Email:<%= rehab.email%></h5>
+                       <h5>Contact:<%= rehab.number%></h5>
+                   </p>
+                   </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+

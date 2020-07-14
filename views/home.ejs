@@ -1,0 +1,348 @@
+
+
+
+<% include partials/header %>
+
+
+
+
+
+
+<!-- Header with full-height image -->
+
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+
+    <!--<span class="w3-jumbo w3-hide-small"><strong>HOPE </strong>is the catalyst to recovery.</span><br>-->
+
+    <!--<span class="w3-xxlarge w3-hide-large w3-hide-small"><strong>Cast Your Vote</strong></span><br>-->
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--<span class="w3-large">“Believe you can and you’re halfway there.”</span>-->
+
+    <!--<p><a href="#" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off"><i class="fa fa-th"> </i> ASSESS YOURSELF</a></p>-->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <br>
+ <br>
+<br>
+    <div align="right">
+      <% if (!currentUser) { %>   
+
+    	<p id="logs"><a href="/login" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off "><strong>LOGIN</strong></a></p>
+
+    	<p id="logs"><a href="/signIn" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off"><strong>SIGN UP</strong></a></p>
+  <% } %>
+  	</div>
+
+  </div> 
+
+  
+
+</header>
+
+
+
+<!-- rehab centres Section -->
+
+<div class="w3-container" style="padding:128px 16px" id="about">
+
+  <h2 class="w3-center" style="color:#24574a;">FEATURED VOTING GUIDELINES</h2>
+
+  
+
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+
+    <div class="w3-quarter">
+
+      <img src="data:image/jpeg;base64,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" alt="" height="250px" width="250px">
+
+      <p class="w3-large" style="color:#24574a;"> <strong>Voters Rights on Polling Day</strong></p>
+
+      <p style="color:#3b7d6d;">One must read and access the guidelines available to vote. acquiring information is of crucial importance. One must seek help from authorities or ask relatives for help if required for the same.Educated individuals are requested to help the ones who are unaware of the process</p>
+
+    </div>
+
+    <div class="w3-quarter">
+
+      <img src="https://www.lboro.ac.uk/media/wwwlboroacuk/content/newsandevents/election-2017-register.png" alt="" height="250px" width="250px">
+
+      <p class="w3-large" style="color:#24574a;"> <strong>Essential Information</strong></p>
+
+      <p style="color:#3b7d6d;">Students must be kept well aware of all essential registration procedures and must have completed all the required processes well an advance prior to the election. Students near the age of 18 muts seek help from institutions for all formalities to cast their vote. </p>
+
+    </div>
+
+    <div class="w3-quarter">
+
+      <img src="https://image.shutterstock.com/image-vector/info-graphic-voting-booths-people-260nw-418597342.jpg" alt="" height="250px" width="250px">
+
+      <p class="w3-large" style="color:#24574a;"> <strong>Facilties at voting Center</strong></p>
+
+      <p style="color:#3b7d6d;">All individuals must avail of the facilities at the voting centre. There exists a variety of facilities for all age groups and these individuals can approach the volunteers and the helping staff at the centres for further assistance with regard to any facility.</p>
+
+    </div>
+
+    <div class="w3-quarter">
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgqkFD7vh1IeXRJ6-jLXuy5nbpfBPIia0OeQ&usqp=CAU" alt="" height="250px" width="250px">
+
+      <p class="w3-large"style="color:#24574a;"> <strong>Communications with voting</strong></p>
+
+      <p style="color:#3b7d6d;">One can avail of the variety of facilities available online, via radio and various other media of communications with regard to voting procedures. One may stay up to date with regular informations as well as tracking of voter id and application for voter ID.</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- Promo Section - "We provide info" -->
+
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
+
+  <div class="w3-row-padding">
+
+    <div class="w3-col m6">
+
+      <h3 style="color:#24574a;">We provide information, resources for Voting Procedures</h3>
+
+      <p style="color:#24574a;"> Our mission is to equip individualsto participate and regulate their voting credentials online as well as track the progress of the same.</p></p>
+
+      <!--<p><a href="#work" class="w3-button w3-black"><i class="fa fa-th"> </i> ASSESS YOURSELF</a></p>-->
+
+    </div>
+
+    <div align="right" class="w3-col m6">
+
+      <img class="w3-image w3-round-large" src="https://static.scientificamerican.com/sciam/cache/file/CF393A78-1DF6-4D70-BF862AC7CA0ACC02_source.jpg" alt="Broken Image" width="500" height="300">
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- Promo Section "Statistics" -->
+
+<div class="w3-container w3-row w3-center w3-grey w3-padding-64">
+
+  <div class="w3-quarter">
+
+    <span class="w3-xxlarge" style="color:#24574a;">14+</span>
+
+    <br>Active Cities
+
+  </div>
+
+  <div class="w3-quarter">
+
+    <span class="w3-xxlarge" style="color:#24574a;">30+</span>
+
+    <br>Associates
+
+  </div>
+
+  <div class="w3-quarter">
+
+    <span class="w3-xxlarge" style="color:#24574a;">89+</span>
+
+    <br>Happy Clients
+
+  </div>
+
+  <div class="w3-quarter">
+
+    <span class="w3-xxlarge" style="color:#24574a;">10+</span>
+
+    <br>Voting Centers
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- Contact Section -->
+
+<!--<div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">-->
+
+<!--  <h3 class="w3-center">CONTACT</h3>-->
+
+<!--  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>-->
+
+<!--  <div class="w3-row-padding" style="margin-top:64px">-->
+
+<!--    <div class="w3-half">-->
+
+<!--      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Mumbai, India</p>-->
+
+<!--      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +91 9838239773</p>-->
+
+<!--      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>-->
+
+<!--      <br>-->
+
+<!--      <form action="/action_page.php" target="_blank">-->
+
+<!--        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>-->
+
+<!--        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>-->
+
+<!--        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>-->
+
+<!--        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>-->
+
+<!--        <p>-->
+
+<!--          <button class="w3-button w3-black" type="submit">-->
+
+<!--            <i class="fa fa-paper-plane"></i> SEND MESSAGE-->
+
+<!--          </button>-->
+
+<!--        </p>-->
+
+<!--      </form>-->
+
+<!--    </div>-->
+
+<!--    <div class="w3-half">-->
+
+      <!-- Add Google Maps -->
+
+<!--      <div id="googleMap" class="w3-greyscale-max" style="width:100%;height:510px;"></div>-->
+
+<!--    </div>-->
+
+<!--  </div>-->
+
+<!--</div>-->
+
+
+
+
+ 
+
+<!-- Add Google Maps -->
+
+
+<script>
+
+function myMap()
+
+{
+
+  myCenter=new google.maps.LatLng(19.0760, 72.8777);
+
+  var mapOptions= {
+
+    center:myCenter,
+
+    zoom:12, scrollwheel: false, draggable: false,
+
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+
+  };
+
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+
+
+  var marker = new google.maps.Marker({
+
+    position: myCenter,
+
+  });
+
+  marker.setMap(map);
+
+}
+
+
+
+// Modal Image Gallery
+
+function onClick(element) {Modal
+
+  document.getElementById("img01").src = element.src;
+
+  document.getElementById("modal01").style.display = "block";
+
+  var captionText = document.getElementById("caption");
+
+  captionText.innerHTML = element.alt;
+
+}
+
+
+
+
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+
+var mySidebar = document.getElementById("mySidebar");
+
+
+
+function w3_open() {
+
+    if (mySidebar.style.display === 'block') {
+
+        mySidebar.style.display = 'none';
+
+    } else {
+
+        mySidebar.style.display = 'block';
+
+    }
+
+}
+
+
+
+// Close the sidebar with the close button
+
+function w3_close() {
+
+    mySidebar.style.display = "none";
+
+}
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXuMMp1Z5XGHDi_cfbNrtgSQ_1XtkZZLQ&callback=myMap"></script>
+
+
+
+<% include partials/footer %>
+
